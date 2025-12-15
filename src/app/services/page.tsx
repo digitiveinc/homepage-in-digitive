@@ -1,5 +1,26 @@
 import { getServices } from '@/lib/data'
 import Link from 'next/link'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Services | サービス一覧 | 株式会社digitive',
+  description: 'DX化・AI導入・マーケティング・クリエイティブなど、企業の課題解決に向けたサービスをご紹介します。',
+  openGraph: {
+    title: 'Services | サービス一覧',
+    description: 'DX化・AI導入・マーケティング・クリエイティブなど、企業の課題解決に向けたサービス。',
+    url: 'https://digitive.jp/services',
+    images: [
+      {
+        url: 'https://digitive.jp/og-image.jpg',
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+  alternates: {
+    canonical: 'https://digitive.jp/services',
+  },
+}
 
 export default async function ServicesPage() {
   const services = await getServices()

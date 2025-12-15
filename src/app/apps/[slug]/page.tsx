@@ -2,12 +2,48 @@ import { getApps, getApp } from '@/lib/data'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
+import type { Metadata } from 'next'
 
 export async function generateStaticParams() {
   const apps = await getApps()
   return apps.map((app) => ({
     slug: app.slug,
   }))
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string }
+}): Promise<Metadata> {
+  const app = await getApp(params.slug)
+
+  if (!app) {
+    return {
+      title: 'アプリケーションが見つかりません',
+    }
+  }
+
+  return {
+    title: `${app.name} | アプリケーション | 株式会社digitive`,
+    description: app.description,
+    openGraph: {
+      title: `${app.name} | アプリケーション`,
+      description: app.description,
+      url: `https://digitive.jp/apps/${app.slug}`,
+      images: app.icon
+        ? [
+            {
+              url: app.icon,
+              alt: app.name,
+            },
+          ]
+        : [],
+    },
+    alternates: {
+      canonical: `https://digitive.jp/apps/${app.slug}`,
+    },
+  }
 }
 
 export default async function AppDetailPage({

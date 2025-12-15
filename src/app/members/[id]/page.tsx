@@ -1,12 +1,48 @@
 import { getMembers, getMember } from '@/lib/data'
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
+import type { Metadata } from 'next'
 
 export async function generateStaticParams() {
   const members = await getMembers()
   return members.map((member) => ({
     id: member.id,
   }))
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { id: string }
+}): Promise<Metadata> {
+  const member = await getMember(params.id)
+
+  if (!member) {
+    return {
+      title: 'メンバーが見つかりません',
+    }
+  }
+
+  return {
+    title: `${member.name} | メンバー紹介 | 株式会社digitive`,
+    description: `${member.position} - ${member.name}。株式会社digitiveのメンバー紹介。`,
+    openGraph: {
+      title: `${member.name} | メンバー紹介`,
+      description: `${member.position} - ${member.name}`,
+      url: `https://digitive.jp/members/${member.id}`,
+      images: member.image
+        ? [
+            {
+              url: member.image,
+              alt: member.name,
+            },
+          ]
+        : [],
+    },
+    alternates: {
+      canonical: `https://digitive.jp/members/${member.id}`,
+    },
+  }
 }
 
 export default async function MemberDetailPage({

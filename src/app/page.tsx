@@ -37,16 +37,16 @@ function HeroSection() {
         </div>
 
         {/* CTA Buttons */}
-        <div className="flex gap-6 justify-center flex-wrap pt-8">
+        <div className="flex gap-4 md:gap-6 justify-center flex-wrap pt-8">
           <Link
             href="/services"
-            className="px-8 py-4 bg-gradient-to-r from-primary to-accent text-dark-bg font-bold rounded-lg hover:shadow-lg hover:shadow-primary/50 transition-all transform hover:scale-105 drop-shadow-lg"
+            className="px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-primary to-accent text-dark-bg font-bold rounded-lg hover:shadow-lg hover:shadow-primary/50 transition-all transform hover:scale-105 drop-shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
           >
             サービスを見る
           </Link>
           <Link
             href="/contact"
-            className="px-8 py-4 border-2 border-primary text-primary font-bold rounded-lg hover:bg-primary/10 transition-all drop-shadow-lg"
+            className="px-6 md:px-8 py-3 md:py-4 border-2 border-primary text-primary font-bold rounded-lg hover:bg-primary/10 transition-all drop-shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
           >
             お問い合わせ
           </Link>

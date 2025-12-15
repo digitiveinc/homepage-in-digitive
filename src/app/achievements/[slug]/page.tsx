@@ -2,12 +2,48 @@ import { getAchievements, getAchievement } from '@/lib/data'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
+import type { Metadata } from 'next'
 
 export async function generateStaticParams() {
   const achievements = await getAchievements()
   return achievements.map((achievement) => ({
     slug: achievement.slug,
   }))
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string }
+}): Promise<Metadata> {
+  const achievement = await getAchievement(params.slug)
+
+  if (!achievement) {
+    return {
+      title: '実績が見つかりません',
+    }
+  }
+
+  return {
+    title: `${achievement.title} | 実績 | 株式会社digitive`,
+    description: `${achievement.client} - ${achievement.description}`,
+    openGraph: {
+      title: `${achievement.title} | 実績`,
+      description: achievement.description,
+      url: `https://digitive.jp/achievements/${achievement.slug}`,
+      images: achievement.image
+        ? [
+            {
+              url: achievement.image,
+              alt: achievement.title,
+            },
+          ]
+        : [],
+    },
+    alternates: {
+      canonical: `https://digitive.jp/achievements/${achievement.slug}`,
+    },
+  }
 }
 
 export default async function AchievementDetailPage({

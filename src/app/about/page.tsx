@@ -1,4 +1,26 @@
 import { getCompanyInfo } from '@/lib/data'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'About Digitive | 企業情報 | 株式会社digitive',
+  description: 'DX・AI・クリエイティブで企業の成長をサポートする株式会社digitiveについて。ミッション、ビジョン、コアバリューをご紹介します。',
+  openGraph: {
+    title: 'About Digitive | 企業情報',
+    description: 'DX・AI・クリエイティブで企業の成長をサポートする株式会社digitiveについて。',
+    url: 'https://digitive.jp/about',
+    images: [
+      {
+        url: 'https://digitive.jp/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'About Digitive',
+      },
+    ],
+  },
+  alternates: {
+    canonical: 'https://digitive.jp/about',
+  },
+}
 
 export default async function AboutPage() {
   const company = await getCompanyInfo()

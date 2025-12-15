@@ -20,7 +20,7 @@ export default function Footer() {
             </p>
             <Link
               href="/contact"
-              className="inline-block px-8 py-4 bg-gradient-to-r from-primary to-accent text-dark-bg font-bold rounded-lg hover:shadow-lg hover:shadow-primary/50 transition-all transform hover:scale-105"
+              className="inline-block px-8 py-4 bg-gradient-to-r from-primary to-accent text-dark-bg font-bold rounded-lg hover:shadow-lg hover:shadow-primary/50 transition-all transform hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
             >
               今すぐ相談する
             </Link>
@@ -53,7 +53,7 @@ export default function Footer() {
               </p>
               <p className="text-dark-text-secondary text-sm">
                 <span className="text-primary font-semibold">メール:</span>{' '}
-                <a href={`mailto:${companyData.email}`} className="hover:text-primary transition-colors">
+                <a href={`mailto:${companyData.email}`} className="hover:text-primary transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary rounded px-1">
                   {companyData.email}
                 </a>
               </p>
@@ -69,7 +69,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/about"
-                  className="text-dark-text-secondary hover:text-primary hover:translate-x-1 transition-all text-sm font-medium"
+                  className="text-dark-text-secondary hover:text-primary hover:translate-x-1 transition-all text-sm font-medium focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary rounded px-1"
                 >
                   会社概要
                 </Link>
@@ -77,7 +77,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/members"
-                  className="text-dark-text-secondary hover:text-primary hover:translate-x-1 transition-all text-sm font-medium"
+                  className="text-dark-text-secondary hover:text-primary hover:translate-x-1 transition-all text-sm font-medium focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary rounded px-1"
                 >
                   メンバー
                 </Link>
@@ -85,7 +85,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/achievements"
-                  className="text-dark-text-secondary hover:text-primary hover:translate-x-1 transition-all text-sm font-medium"
+                  className="text-dark-text-secondary hover:text-primary hover:translate-x-1 transition-all text-sm font-medium focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary rounded px-1"
                 >
                   実績
                 </Link>
@@ -102,7 +102,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/services"
-                  className="text-dark-text-secondary hover:text-primary hover:translate-x-1 transition-all text-sm font-medium"
+                  className="text-dark-text-secondary hover:text-primary hover:translate-x-1 transition-all text-sm font-medium focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary rounded px-1"
                 >
                   DX/AI支援
                 </Link>
@@ -110,7 +110,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/services"
-                  className="text-dark-text-secondary hover:text-primary hover:translate-x-1 transition-all text-sm font-medium"
+                  className="text-dark-text-secondary hover:text-primary hover:translate-x-1 transition-all text-sm font-medium focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary rounded px-1"
                 >
                   マーケティング/PR
                 </Link>
@@ -118,7 +118,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/services"
-                  className="text-dark-text-secondary hover:text-primary hover:translate-x-1 transition-all text-sm font-medium"
+                  className="text-dark-text-secondary hover:text-primary hover:translate-x-1 transition-all text-sm font-medium focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary rounded px-1"
                 >
                   クリエイティブ
                 </Link>
@@ -126,7 +126,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/apps"
-                  className="text-dark-text-secondary hover:text-primary hover:translate-x-1 transition-all text-sm font-medium"
+                  className="text-dark-text-secondary hover:text-primary hover:translate-x-1 transition-all text-sm font-medium focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary rounded px-1"
                 >
                   アプリプラットフォーム
                 </Link>
@@ -143,7 +143,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/contact"
-                  className="text-dark-text-secondary hover:text-primary hover:translate-x-1 transition-all text-sm font-medium"
+                  className="text-dark-text-secondary hover:text-primary hover:translate-x-1 transition-all text-sm font-medium focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary rounded px-1"
                 >
                   お問い合わせ
                 </Link>
@@ -151,7 +151,7 @@ export default function Footer() {
               <li>
                 <a
                   href={`mailto:${companyData.email}`}
-                  className="text-dark-text-secondary hover:text-primary hover:translate-x-1 transition-all text-sm font-medium"
+                  className="text-dark-text-secondary hover:text-primary hover:translate-x-1 transition-all text-sm font-medium focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary rounded px-1"
                 >
                   メールで相談
                 </a>

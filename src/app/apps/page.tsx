@@ -5,6 +5,8 @@ import Link from 'next/link'
 import { getApps, getAppCategories } from '@/lib/data'
 import { App } from '@/types'
 
+// Note: This is a client component, so we can't use generateMetadata here.
+// Metadata should be set at the route segment level or using redirect with metadata.
 export default function AppsPage() {
   const [apps, setApps] = useState<App[]>([])
   const [categories, setCategories] = useState<any[]>([])

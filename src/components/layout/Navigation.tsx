@@ -22,7 +22,7 @@ export default function Navigation({ onNavigate }: NavigationProps) {
         <Link
           key={link.href}
           href={link.href}
-          className="text-dark-text hover:text-primary transition-colors font-medium text-sm md:text-base"
+          className="text-dark-text hover:text-primary transition-colors font-medium text-sm md:text-base focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary rounded px-2 py-1"
           onClick={onNavigate}
         >
           {link.label}

@@ -1,5 +1,26 @@
 import { getAchievements } from '@/lib/data'
 import Link from 'next/link'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Achievements | 実績紹介 | 株式会社digitive',
+  description: '様々なクライアント企業のデジタル変革を支援した実績をご紹介します。',
+  openGraph: {
+    title: 'Achievements | 実績紹介',
+    description: '様々なクライアント企業のデジタル変革を支援した実績をご紹介します。',
+    url: 'https://digitive.jp/achievements',
+    images: [
+      {
+        url: 'https://digitive.jp/og-image.jpg',
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+  alternates: {
+    canonical: 'https://digitive.jp/achievements',
+  },
+}
 
 export default async function AchievementsPage() {
   const achievements = await getAchievements()

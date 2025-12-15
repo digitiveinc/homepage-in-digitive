@@ -1,30 +1,44 @@
 'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Navigation from './Navigation'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
 
+  // Handle Escape key to close mobile menu
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isOpen) {
+        setIsOpen(false)
+      }
+    }
+
+    if (isOpen) {
+      document.addEventListener('keydown', handleEscape)
+      return () => document.removeEventListener('keydown', handleEscape)
+    }
+  }, [isOpen])
+
   return (
     <header className="fixed top-0 w-full z-50 bg-dark-bg/95 backdrop-blur-lg border-b border-primary/20 shadow-lg shadow-primary/5">
       <div className="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-        <Link href="/" className="flex items-center gap-3 group">
+        <Link href="/" className="flex items-center gap-3 group" aria-label="Digitive - Home">
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-primary via-accent to-secondary blur-lg opacity-50 group-hover:opacity-75 transition-opacity"></div>
-            <span className="relative text-3xl font-900 bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
+            <span className="relative text-3xl font-900 bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent" aria-hidden="true">
               digitive
             </span>
           </div>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex gap-8 items-center">
+        <nav className="hidden md:flex gap-8 items-center" aria-label="Main navigation">
           <Navigation />
           <Link
             href="/contact"
-            className="px-6 py-2.5 bg-gradient-to-r from-primary to-accent text-dark-bg font-bold rounded-lg hover:shadow-lg hover:shadow-primary/50 transition-all transform hover:scale-105"
+            className="px-6 py-2.5 bg-gradient-to-r from-primary to-accent text-dark-bg font-bold rounded-lg hover:shadow-lg hover:shadow-primary/50 transition-all transform hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
           >
             お問い合わせ
           </Link>
@@ -32,9 +46,11 @@ export default function Header() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden p-2 hover:bg-dark-surface rounded-lg transition-colors relative group"
+          className="md:hidden p-2 hover:bg-dark-surface rounded-lg transition-colors relative group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
           onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle menu"
+          aria-label={isOpen ? 'メニューを閉じる' : 'メニューを開く'}
+          aria-expanded={isOpen}
+          aria-controls="mobile-menu"
         >
           <div className="absolute inset-0 bg-primary/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
           <svg
@@ -63,12 +79,16 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <nav className="absolute top-full left-0 right-0 bg-dark-bg/98 backdrop-blur-lg border-b border-primary/20 md:hidden shadow-xl">
+          <nav
+            className="absolute top-full left-0 right-0 bg-dark-bg/98 backdrop-blur-lg border-b border-primary/20 md:hidden shadow-xl"
+            id="mobile-menu"
+            aria-label="Mobile navigation"
+          >
             <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col gap-4">
               <Navigation onNavigate={() => setIsOpen(false)} />
               <Link
                 href="/contact"
-                className="px-6 py-3 bg-gradient-to-r from-primary to-accent text-dark-bg font-bold rounded-lg text-center hover:shadow-lg hover:shadow-primary/50 transition-all"
+                className="px-6 py-3 bg-gradient-to-r from-primary to-accent text-dark-bg font-bold rounded-lg text-center hover:shadow-lg hover:shadow-primary/50 transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                 onClick={() => setIsOpen(false)}
               >
                 お問い合わせ

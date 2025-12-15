@@ -2,12 +2,48 @@ import { getServices, getService } from '@/lib/data'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
+import type { Metadata } from 'next'
 
 export async function generateStaticParams() {
   const services = await getServices()
   return services.map((service) => ({
     slug: service.slug,
   }))
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string }
+}): Promise<Metadata> {
+  const service = await getService(params.slug)
+
+  if (!service) {
+    return {
+      title: 'サービスが見つかりません',
+    }
+  }
+
+  return {
+    title: `${service.name} | サービス | 株式会社digitive`,
+    description: service.description,
+    openGraph: {
+      title: `${service.name} | サービス`,
+      description: service.description,
+      url: `https://digitive.jp/services/${service.slug}`,
+      images: service.image
+        ? [
+            {
+              url: service.image,
+              alt: service.name,
+            },
+          ]
+        : [],
+    },
+    alternates: {
+      canonical: `https://digitive.jp/services/${service.slug}`,
+    },
+  }
 }
 
 export default async function ServiceDetailPage({

@@ -1,5 +1,26 @@
 import { getMembers } from '@/lib/data'
 import Link from 'next/link'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Members | メンバー紹介 | 株式会社digitive',
+  description: 'DX・AI・クリエイティブの専門家集団、株式会社digitiveのメンバーをご紹介します。',
+  openGraph: {
+    title: 'Members | メンバー紹介',
+    description: 'DX・AI・クリエイティブの専門家集団、株式会社digitiveのメンバーをご紹介します。',
+    url: 'https://digitive.jp/members',
+    images: [
+      {
+        url: 'https://digitive.jp/og-image.jpg',
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+  alternates: {
+    canonical: 'https://digitive.jp/members',
+  },
+}
 
 export default async function MembersPage() {
   const members = await getMembers()
