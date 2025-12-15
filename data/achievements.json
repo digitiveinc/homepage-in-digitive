@@ -1,0 +1,70 @@
+{
+  "achievements": [
+    {
+      "id": "niudo-honpo",
+      "slug": "niudo-honpo",
+      "client": "丹生堂本舗",
+      "title": "駄菓子屋さんごっこ",
+      "category": ["marketing", "photo"],
+      "image": "/images/achievements/niudo.jpg",
+      "description": "地域に愛される駄菓子屋を次世代へ。マーケティング戦略と写真撮影で、ブランド認知を拡大しました。",
+      "services": ["マーケティング/PR支援", "写真撮影"],
+      "date": "2024-03"
+    },
+    {
+      "id": "kansai-daigaku",
+      "slug": "kansai-daigaku",
+      "client": "関西大学",
+      "title": "ブランド動画制作",
+      "category": ["video", "sns"],
+      "image": "/images/achievements/kansai.jpg",
+      "description": "大学のブランドイメージを動画で表現。SNS活用で学生との接点強化を実現。",
+      "services": ["映像・動画制作", "SNS運用代行"],
+      "date": "2024-02"
+    },
+    {
+      "id": "doshisha-women",
+      "slug": "doshisha-women",
+      "client": "同志社女子大学",
+      "title": "AI教育プログラム映像制作",
+      "category": ["video"],
+      "image": "/images/achievements/doshisha.jpg",
+      "description": "次世代教育の価値を映像で伝える。AI教育プログラムの魅力を多くの学生に届けました。",
+      "services": ["映像・動画制作"],
+      "date": "2024-01"
+    },
+    {
+      "id": "spaworld",
+      "slug": "spaworld",
+      "client": "SPAWORLD",
+      "title": "施設紹介映像 & 撮影",
+      "category": ["video", "photo"],
+      "image": "/images/achievements/spaworld.jpg",
+      "description": "スパ・温浴施設の魅力を完全表現。映像と写真で、来館促進を実現。",
+      "services": ["映像・動画制作", "写真撮影"],
+      "date": "2023-12"
+    },
+    {
+      "id": "osaka-kansai-expo",
+      "slug": "osaka-kansai-expo",
+      "client": "大阪・関西万博2025",
+      "title": "サイネージ映像制作",
+      "category": ["video"],
+      "image": "/images/achievements/expo.jpg",
+      "description": "万博のサイネージ映像制作。多言語対応で世界に向けた発信を実現。",
+      "services": ["映像・動画制作"],
+      "date": "2024-06"
+    },
+    {
+      "id": "mizukara",
+      "slug": "mizukara",
+      "client": "ミズカラ",
+      "title": "セレモニー映像 & 内製化支援",
+      "category": ["video", "training"],
+      "image": "/images/achievements/mizukara.jpg",
+      "description": "卒業式・セレモニー映像の制作から内製化まで。組織の動画制作能力を強化。",
+      "services": ["映像・動画制作", "内製化支援"],
+      "date": "2024-05"
+    }
+  ]
+}

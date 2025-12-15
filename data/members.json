@@ -1,0 +1,82 @@
+{
+  "members": [
+    {
+      "id": "kota-matsunaga",
+      "name": "松永 昂大",
+      "nameEn": "Kota Matsunaga",
+      "position": "代表取締役",
+      "positionEn": "CEO / Founder",
+      "image": "/images/members/kota-matsunaga.jpg",
+      "bio": "世界中の子どもが「自分の枠を超えた挑戦ができる環境」構築を目標に掲げています。DXとクリエイティブの融合で、ビジネス課題を解決します。",
+      "social": {
+        "twitter": "",
+        "linkedin": ""
+      }
+    },
+    {
+      "id": "issei-kamotani",
+      "name": "鴨谷 一生",
+      "nameEn": "Issei Kamotani",
+      "position": "取締役",
+      "positionEn": "Director",
+      "image": "/images/members/issei-kamotani.jpg",
+      "bio": "ディズニーを超える組織構築を志向。チームの力を最大限に引き出し、一流のサービス提供を実現します。",
+      "social": {
+        "twitter": "",
+        "linkedin": ""
+      }
+    },
+    {
+      "id": "taise-yamashiro",
+      "name": "山代 大成",
+      "nameEn": "Taise Yamashiro",
+      "position": "プロジェクトマネージャー",
+      "positionEn": "Project Manager",
+      "image": "/images/members/taise-yamashiro.jpg",
+      "bio": "クライアントの課題を深く理解し、最適なソリューションを提案・実行します。",
+      "social": {
+        "twitter": "",
+        "linkedin": ""
+      }
+    },
+    {
+      "id": "koki-maruyama",
+      "name": "丸山 紘暉",
+      "nameEn": "Koki Maruyama",
+      "position": "プロジェクトマネージャー",
+      "positionEn": "Project Manager",
+      "image": "/images/members/koki-maruyama.jpg",
+      "bio": "マーケティングとクリエイティブの視点から、ブランド価値を最大化します。",
+      "social": {
+        "twitter": "",
+        "linkedin": ""
+      }
+    },
+    {
+      "id": "daiyu-sakurai",
+      "name": "櫻井 大祐",
+      "nameEn": "Daiyu Sakurai",
+      "position": "プロジェクトマネージャー",
+      "positionEn": "Project Manager",
+      "image": "/images/members/daiyu-sakurai.jpg",
+      "bio": "システム開発とDX導入のプロフェッショナル。最新技術で業務効率化を実現します。",
+      "social": {
+        "twitter": "",
+        "linkedin": ""
+      }
+    },
+    {
+      "id": "kanae-shimizu",
+      "name": "志水 香菜絵",
+      "nameEn": "Kanae Shimizu",
+      "position": "経理担当",
+      "positionEn": "Accounting",
+      "image": "/images/members/kanae-shimizu.jpg",
+      "bio": "企業の財務管理と経営支援を通じて、持続可能な成長を支えます。",
+      "social": {
+        "twitter": "",
+        "linkedin": ""
+      }
+    }
+  ]
+}

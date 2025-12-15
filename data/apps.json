@@ -1,0 +1,93 @@
+{
+  "apps": [
+    {
+      "id": "app-001",
+      "slug": "digitive-analytics",
+      "name": "Digitive Analytics",
+      "icon": "/images/apps/analytics-icon.png",
+      "category": "business",
+      "description": "ビジネスデータを可視化。リアルタイムで経営判断をサポートします。",
+      "screenshots": [
+        "/images/apps/analytics-1.png",
+        "/images/apps/analytics-2.png",
+        "/images/apps/analytics-3.png"
+      ],
+      "downloadLinks": {
+        "ios": "https://apps.apple.com/",
+        "android": "https://play.google.com/",
+        "web": "https://analytics.digitive.jp"
+      },
+      "features": [
+        "リアルタイムデータ可視化",
+        "カスタマイズ可能なダッシュボード",
+        "詳細なレポート機能",
+        "データエクスポート"
+      ],
+      "createdAt": "2024-01-15"
+    },
+    {
+      "id": "app-002",
+      "slug": "creative-suite",
+      "name": "Creative Suite",
+      "icon": "/images/apps/creative-icon.png",
+      "category": "creative",
+      "description": "クリエイティブ制作をシンプルに。プロレベルの動画編集がいますぐ始められます。",
+      "screenshots": [
+        "/images/apps/creative-1.png",
+        "/images/apps/creative-2.png",
+        "/images/apps/creative-3.png"
+      ],
+      "downloadLinks": {
+        "ios": "https://apps.apple.com/",
+        "android": "https://play.google.com/",
+        "web": "https://creative.digitive.jp"
+      },
+      "features": [
+        "直感的な動画編集",
+        "豊富なテンプレート",
+        "リアルタイムプレビュー",
+        "ワンクリックエクスポート"
+      ],
+      "createdAt": "2024-02-20"
+    },
+    {
+      "id": "app-003",
+      "slug": "ai-assistant",
+      "name": "AI Assistant",
+      "icon": "/images/apps/ai-icon.png",
+      "category": "business",
+      "description": "業務を加速させるAIアシスタント。文章作成から分析まで、あらゆる作業をサポート。",
+      "screenshots": [
+        "/images/apps/ai-1.png",
+        "/images/apps/ai-2.png",
+        "/images/apps/ai-3.png"
+      ],
+      "downloadLinks": {
+        "ios": "https://apps.apple.com/",
+        "android": "https://play.google.com/",
+        "web": "https://ai.digitive.jp"
+      },
+      "features": [
+        "自然言語処理",
+        "マルチランゲージ対応",
+        "カスタムAIモデル",
+        "チーム向けコラボレーション"
+      ],
+      "createdAt": "2024-03-10"
+    }
+  ],
+  "categories": [
+    {
+      "id": "business",
+      "name": "ビジネス"
+    },
+    {
+      "id": "creative",
+      "name": "クリエイティブ"
+    },
+    {
+      "id": "education",
+      "name": "教育"
+    }
+  ]
+}

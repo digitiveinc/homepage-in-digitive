@@ -1,0 +1,14 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/achievements/page": "app/achievements/page.js",
+  "/about/page": "app/about/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/apps/page": "app/apps/page.js",
+  "/members/page": "app/members/page.js",
+  "/page": "app/page.js",
+  "/services/page": "app/services/page.js",
+  "/apps/[slug]/page": "app/apps/[slug]/page.js",
+  "/services/[slug]/page": "app/services/[slug]/page.js",
+  "/achievements/[slug]/page": "app/achievements/[slug]/page.js",
+  "/members/[id]/page": "app/members/[id]/page.js"
+}

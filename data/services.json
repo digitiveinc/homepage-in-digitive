@@ -1,0 +1,34 @@
+{
+  "services": [
+    {
+      "id": "dx-ai",
+      "slug": "dx-ai",
+      "name": "DX/AI支援",
+      "shortName": "DX & AI",
+      "description": "ビジネスのデジタル化と内製化を支援。AI活用で新しい価値を創出します。",
+      "details": "企業のDX推進をワンストップで支援。既存業務の効率化からAI導入まで、幅広いサービスを提供します。",
+      "image": "/images/services/dx-ai.jpg",
+      "color": "#00ff88"
+    },
+    {
+      "id": "marketing-pr",
+      "slug": "marketing-pr",
+      "name": "マーケティング/PR支援",
+      "shortName": "Marketing & PR",
+      "description": "ブランド価値向上と認知度拡大を実現。戦略的なマーケティングで成長を加速。",
+      "details": "コンサルティングから実行まで。デジタル時代に必要な伴走型マーケティング支援を実施します。",
+      "image": "/images/services/marketing.jpg",
+      "color": "#ff0080"
+    },
+    {
+      "id": "creative",
+      "slug": "creative",
+      "name": "クリエイティブ制作",
+      "shortName": "Creative",
+      "description": "映像、写真、Webサイトなど、クリエイティブで感動を生み出します。",
+      "details": "企画から制作まで。最新技術と創造性で、貴社のビジョンを実現します。",
+      "image": "/images/services/creative.jpg",
+      "color": "#00d4ff"
+    }
+  ]
+}
