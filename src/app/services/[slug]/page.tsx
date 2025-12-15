@@ -1,6 +1,7 @@
 import { getServices, getService } from '@/lib/data'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export async function generateStaticParams() {
   const services = await getServices()
@@ -31,12 +32,14 @@ export default async function ServiceDetailPage({
         </Link>
 
         <div className="mb-12">
-          <div className="h-96 rounded-lg overflow-hidden mb-8 bg-dark-surface p-8">
+          <div className="h-96 rounded-lg overflow-hidden mb-8 bg-dark-surface p-8 relative">
             {service.image ? (
-              <img
+              <Image
                 src={service.image}
                 alt={service.name}
-                className="w-full h-full object-cover rounded-lg"
+                fill
+                className="object-cover rounded-lg"
+                sizes="(max-width: 768px) 100vw, 800px"
               />
             ) : (
               <div className="w-full h-full flex items-center justify-center" style={{ backgroundColor: service.color + '20' }}>

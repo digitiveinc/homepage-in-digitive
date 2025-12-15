@@ -1,6 +1,7 @@
 import { getApps, getApp } from '@/lib/data'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export async function generateStaticParams() {
   const apps = await getApps()
@@ -31,11 +32,13 @@ export default async function AppDetailPage({
         </Link>
 
         <div className="mb-12">
-          <div className="h-96 rounded-lg overflow-hidden mb-8 bg-dark-surface p-8 flex items-center justify-center border border-dark-text/10">
+          <div className="h-96 rounded-lg overflow-hidden mb-8 bg-dark-surface p-8 flex items-center justify-center border border-dark-text/10 relative">
             {app.icon ? (
-              <img
+              <Image
                 src={app.icon}
                 alt={app.name}
+                width={300}
+                height={300}
                 className="max-h-full max-w-full"
               />
             ) : (
@@ -125,12 +128,14 @@ export default async function AppDetailPage({
                 {app.screenshots.map((screenshot, idx) => (
                   <div
                     key={idx}
-                    className="h-64 rounded-lg overflow-hidden bg-dark-surface border border-dark-text/10"
+                    className="h-64 rounded-lg overflow-hidden bg-dark-surface border border-dark-text/10 relative"
                   >
-                    <img
+                    <Image
                       src={screenshot}
                       alt={`Screenshot ${idx + 1}`}
-                      className="w-full h-full object-cover"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 400px"
                     />
                   </div>
                 ))}

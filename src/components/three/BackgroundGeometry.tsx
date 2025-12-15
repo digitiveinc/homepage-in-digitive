@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef } from 'react'
+import { useRef, useEffect } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Icosahedron, Octahedron, Tetrahedron } from '@react-three/drei'
 import * as THREE from 'three'
@@ -21,6 +21,7 @@ function GeometryItem({
   speed: number
 }) {
   const ref = useRef<THREE.Mesh>(null!)
+  const materialRef = useRef<THREE.MeshStandardMaterial>(null!)
 
   useFrame(() => {
     if (ref.current) {
@@ -29,6 +30,22 @@ function GeometryItem({
       ref.current.position.y += Math.sin(Date.now() * 0.001 * speed) * 0.01
     }
   })
+
+  // Cleanup on unmount to prevent memory leaks
+  useEffect(() => {
+    return () => {
+      if (ref.current) {
+        // Dispose geometry
+        if (ref.current.geometry) {
+          ref.current.geometry.dispose()
+        }
+        // Dispose material
+        if (materialRef.current) {
+          materialRef.current.dispose()
+        }
+      }
+    }
+  }, [])
 
   const ShapeComponent =
     shape === 'icosahedron'
@@ -41,6 +58,7 @@ function GeometryItem({
     <mesh ref={ref} position={position} rotation={rotation} scale={scale}>
       <ShapeComponent args={[1, 2]} />
       <meshStandardMaterial
+        ref={materialRef}
         color={color}
         wireframe={true}
         emissive={color}

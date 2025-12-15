@@ -1,5 +1,6 @@
 import { getMembers, getMember } from '@/lib/data'
 import { notFound } from 'next/navigation'
+import Image from 'next/image'
 
 export async function generateStaticParams() {
   const members = await getMembers()
@@ -25,12 +26,14 @@ export default async function MemberDetailPage({
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div>
             <div className="sticky top-24">
-              <div className="h-80 rounded-lg overflow-hidden mb-6 bg-dark-surface">
+              <div className="h-80 rounded-lg overflow-hidden mb-6 bg-dark-surface relative">
                 {member.image ? (
-                  <img
+                  <Image
                     src={member.image}
                     alt={member.name}
-                    className="w-full h-full object-cover"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 300px"
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center text-4xl font-bold text-primary bg-gradient-to-br from-primary/20 to-secondary/20">

@@ -1,6 +1,7 @@
 import { getAchievements, getAchievement } from '@/lib/data'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export async function generateStaticParams() {
   const achievements = await getAchievements()
@@ -31,12 +32,14 @@ export default async function AchievementDetailPage({
         </Link>
 
         <div className="mb-12">
-          <div className="h-96 rounded-lg overflow-hidden mb-8 bg-dark-surface">
+          <div className="h-96 rounded-lg overflow-hidden mb-8 bg-dark-surface relative">
             {achievement.image ? (
-              <img
+              <Image
                 src={achievement.image}
                 alt={achievement.title}
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 800px"
               />
             ) : (
               <div className="w-full h-full flex items-center justify-center text-dark-text-secondary bg-gradient-to-br from-primary/20 to-secondary/20">
